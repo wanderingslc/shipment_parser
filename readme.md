@@ -2,7 +2,9 @@
 
 Run from the command line, the format is
 `ts-node src/index.ts drivers.csv addresses.csv`
-This will use the files in the root directory. You can use your own files by passing in the path to them on your computer, after downloading the project.
+This will use the files in the root directory. You can use your own files by passing in the path to them on your 
+computer, after downloading the project.
+Order is important, the first file is the drivers file, the second file is the addresses file.
 
 Or you can replace / update the files in the root directory with your own files.
 
