@@ -1,9 +1,11 @@
+// Separate file for the logic of the assignment.
+
 import {Driver} from "../interfaces/driver.interface";
 import {Shipment} from "../interfaces/shipment.interface";
 export function calculateBaseScore(name: string, length: number): number {
     const vowels = ["a", "e", "i", "o", "u"];
     let count = 0;
-
+    // make sure everything is the same case
     for (const char of name.toLowerCase()) {
         if (vowels.includes(char)) {
             count += 1.5;

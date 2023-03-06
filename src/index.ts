@@ -1,6 +1,11 @@
+// Node packages
+const nReadlines = require('n-readlines');
+
+// Functions -> Separate Logic into smaller, easier to understand blocks of code
 import {assignShipmentsToDrivers, calculateBaseScore} from "./logic/shipmentCalculations";
 
-const nReadlines = require('n-readlines');
+
+// Interfaces: Found several styles in research, went with a simpler one
 import {Driver} from "./interfaces/driver.interface";
 import {Shipment} from "./interfaces/shipment.interface";
 
@@ -10,6 +15,7 @@ const addressFile = process.argv[3];
 const driversParsed: Driver[] = [];
 const shipmentsParsed: Shipment[] = [];
 
+// Grab data from files
 const driversLiner = new nReadlines(driverFile);
 let driversLine;
 while (driversLine = driversLiner.next()) {
@@ -39,6 +45,7 @@ for (const shipment of shipmentsParsed) {
 
 const [totalScore, assignments] = assignShipmentsToDrivers(driversParsed, shipmentsParsed);
 
+// Output
 console.log("Total SS:", totalScore);
 console.log("Assignments:", assignments);
 console.table(assignments);
